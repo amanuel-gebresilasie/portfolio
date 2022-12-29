@@ -1,0 +1,248 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'portfolio/style.css' %}">
+  <!-- Font Awsomes Link-->
+  <script src="https://kit.fontawesome.com/dd8d60696b.js" crossorigin="anonymous"></script>
+  <title>Portfolio</title>
+</head>
+<body>
+
+	<span class="nav-hum">
+		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-list" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+		</svg>
+	</span>
+
+	<nav>
+		<div class="nav-content-container">
+			<div class="nav-profile">
+				<div class="nav-profile-img-container">
+					<img src={% static 'portfolio/img1.png' %}/>
+				</div>
+				<h1 class="nav-profile-name">Amanuel Gebreselassie</h1>
+				<div class="nav-profile-social-links">
+					<a href="https://github.com" target="_blank">
+						<i class="fa-brands fa-github"></i>
+					</a>
+					<a href="https://t.me/py_dev_il" target="_blank">
+						<i class="fa-brands fa-telegram"></i>
+					</a>
+				</div>
+			</div>
+
+			<div class="nav-content">
+				<ul>
+					<li><button id="nav-to-home" onclick="_scrollTo(this)" data-to="#home"><i class="fa-solid fa-house"></i><span>Home</span></button></li>
+					<li><button id="nav-to-about" onclick="_scrollTo(this)" data-to="#about"><i class="fa-solid fa-user"></i><span>About</span></button></li>
+					<li><button id="nav-to-skills" onclick="_scrollTo(this)" data-to="#skills"><i class="fa-solid fa-laptop-code"></i><span>Skills</span></a></li>
+					<li><button id="nav-to-projects" onclick="_scrollTo(this)" data-to="#projects"><i class="fa-solid fa-list-check"></i><span>Projects</span></button></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<!-- Header Section -->
+		<section id="home" class="header">
+			<span class="header_content_holder">
+				<h1 class="name">Amanuel Gebreselassie</h1>
+				<p class="auto_text">I'm a <span class="auto"></span></p>
+			</span><!-- Header Text Holder -->
+		</section><!-- Header Section -->
+
+
+		<!-- About Section -->
+		<section id="about" class="section about">
+			<div class="section-content">
+				<span class="section-title">
+					<h2>About</h2>
+				</span>
+				<p>I'm a self-taught FullStack Developer. I'm very passionate and dedicated to my work. With in few years of experience as a FullStack Developer, I have acquired the skills necessary to build great, dynamic and advanced programms/projects that meet the latest programming conventions.</p>
+				<p>As a programmer I'm able to work with others, explaining my works and meet production deadlines. I'm also skilled at quickly learning new processes, technologies and programming languages. Motivated with strong organizational and time management abilities. Most importantly, I'm constantly trying to learn new skills to improve myself and my works.</p>
+				<img id="img-meme" src="{% static 'portfolio/img-meme.png' %}">
+				<span class="section-subtitle">
+					<h2>FullStack Programmer | BackEnd Developer.</h2>
+				</span>
+				<p id="p3">From the moment I printed "Hello World" on the console, I knew I was hooked into the world of software development. Since then, I can't get enough and I have been obsessed with the idea of using software to solve practical problems.</p>
+				<div class="section-about-list">
+					<ul>
+						<li><i id="i" class="fa-solid fa-chevron-right"></i><strong>My Name:</strong><span>Amanuel Gebreselassie</span></li>
+						<li><i id="i" class="fa-solid fa-chevron-right"></i><strong>Skill-content:</strong><span>FullStack</span></li>
+						<li><i id="i" class="fa-solid fa-chevron-right"></i><strong>City:</strong><span>Addis Ababa, Ethiopia</span></li>
+						<li><i id="i" class="fa-solid fa-chevron-right"></i><strong>Age:</strong><span>16</span></li>
+						<li><i id="i" class="fa-solid fa-chevron-right"></i><strong>Email:</strong><span>amanuelee2@gmail.com</span></li>
+						<li><i id="i" class="fa-solid fa-chevron-right"></i><strong>Freelance:</strong><span>available</span></li>
+					</ul>
+				</div>
+				<p id="special">My specialities include quickly learning new skills and programming languages, problem solving, dynamic programing and OOP. I'm still enthusiastically grabbing onto other programming languages, frameworks and principles.</p>
+			</div><!-- Section Content -->
+		</section><!-- About -->
+
+		<!-- Skills -->
+		<section id="skills" class="section skills">
+			<div class="section-content">
+				<span class="section-title">
+					<h2>Skills</h2>
+				</span>
+				<p>Some of my skills and abilities are below.</p>
+				<div class="section-skills-list">
+
+					<div class="progress">
+						<span class="skill">HTML/CSS</span>
+						<div class="progress-bar-wrapper">
+							<div data-width="95%" style="transition-duration: 1.3s;" class="progress-bar"></div>
+						</div>
+					</div>
+
+					<div class="progress">
+						<span class="skill">JAVASCRIPT ES6/JQUERY</span>
+						<div class="progress-bar-wrapper">
+							<div data-width="20%" style="transition-duration: 1.8s;" class="progress-bar"></div>
+						</div>
+					</div>
+
+					<div class="progress">
+						<span class="skill">PYTHON</span>
+						<div class="progress-bar-wrapper">
+							<div data-width="98%" style="transition-duration: 1.5s;" class="progress-bar"></div>
+						</div>
+					</div>
+
+				</div>
+			</div><!-- Section Content -->
+		</section><!-- Skills -->
+
+		<!-- Projects Section -->
+		<section id="projects" class="section projects">
+			<div class="section-content">
+				<div class="section-title">
+					<h2>Projects</h2>
+				</div>
+				<p id="pp">Some of My Awesome Previous Project.</p>
+
+				<div class="section-projects-list">
+					<!-- projects -->
+					{% for project in projects %}
+					<div class="project">
+						<img class="project-img" src="{{ project.img.url }}" draggable/>
+						<div class="project-info-container">
+							<span class="project-info">
+								<button onclick="openLink(this)" data-link="{{ project.view_link }}"><i class="fa-solid fa-eye fa-lg"></i></button>
+							</span>
+							<span class="project-info">
+								<button onclick="openLink(this)" data-link="{{ project.github_link }}"><i class="fa-brands fa-github fa-lg"></i></button>
+							</span>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div><!-- Section Content -->
+		</section><!-- Projects -->
+
+	</div><!-- Main Container-->
+
+	<!-- Typed.js script link -->
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+	<!-- Custom script -->
+	<script>
+		let activeNavEl = document.querySelector('#nav-to-home');
+		activeNavEl.style.color = '#173c6b';
+		// ============= Typed Effect ============= //
+		window.addEventListener('load',()=>{
+			const words = ["Programmer","Pythoneer","Developer","Designer"]
+			const t = new Typed(".auto",{
+				strings: [...words],
+				typeSpeed: 100,
+				backSpeed: 50,
+				backDelay: 800,
+				loop:true
+			});
+			document.querySelector('.header_content_holder').style.opacity = '1';
+		});
+		
+		const imgMeme = document.querySelector("#img-meme");
+		const aboutList = document.querySelector(".section-about-list");
+		const skillsList = document.querySelector(".section-skills-list");
+		
+		// ============= Scroll events ============= //
+		window.addEventListener('scroll',()=>{
+			// Image Slide Effect
+			if (imgMeme.offsetTop+80 < (window.innerHeight+window.pageYOffset) && imgMeme.style.opacity == 0){
+				imgMeme.style.opacity = '1';
+				imgMeme.style.margin = '20px 20px 20px 20px';
+			}
+			// Skills List Slide Effect
+			if (aboutList.offsetTop+80 < (window.innerHeight+window.pageYOffset) && aboutList.style.opacity == 0){
+				aboutList.style.opacity = '1';
+				aboutList.style.margin = '2px 0 2px 0';
+			}
+			// skills list bar slide effect
+			if (skillsList.offsetTop+80 < (window.innerHeight+window.pageYOffset) && skillsList.style.opacity == 0){
+				skillsList.style.opacity = '1';
+				skillsList.style.marginRight = '0';
+				// progress bar effect
+				const bars = document.querySelectorAll(".progress-bar");
+				bars.forEach((bar)=>{bar.style.width=bar.dataset.width;});
+
+				const progresses = document.querySelectorAll(".progress");
+				progresses.forEach((progress)=>{progress.style.margin = '12px 0 12px 0';});
+			}
+		/*console.log(Math.round(window.pageYOffset));
+			console.log(document.querySelector('#about').offsetTop-Math.round(window.pageYOffset));*/
+			
+			document.querySelectorAll('section').forEach((el)=>{
+			if (el.offsetTop-Math.round(window.pageYOffset) > 0 && el.offsetTop-Math.round(window.pageYOffset) < 300){
+				console.log("true");
+				if (activeNavEl){activeNavEl.style.color = '#A8A9B4'}
+				activeNavEl = document.querySelector("#nav-to-"+el.id.replace('#',''))
+				activeNavEl.style.color = '#173c6b';
+			}
+			if (window.pageYOffset < 200){
+				console.log("true----------");
+				if (activeNavEl){activeNavEl.style.color = '#A8A9B4'}
+				activeNavEl = document.querySelector("#nav-to-home")
+				activeNavEl.style.color = '#173c6b';
+			}
+			})
+
+
+		});
+
+		// Function to open links //
+		function openLink(caller){
+			// open
+			window.open(caller.dataset.link);
+		}
+
+		// nav hum
+		const navHum = document.querySelector('.nav-hum');
+		const nav = document.querySelector('nav');
+		navHum.addEventListener('click', ()=>{
+			nav.classList.toggle('nav-open');
+			document.body.classList.toggle('body-no-scroll');
+		});
+
+		// navigation thru nav links
+		function _scrollTo(caller) {
+			const to = caller.dataset.to;
+			if (activeNavEl) {
+				activeNavEl.style.color = '#A8A9B4';
+			}
+			caller.style.color = '#173c6b';
+			activeNavEl = caller;
+
+			nav.classList.toggle('nav-open');
+			document.body.classList.toggle('body-no-scroll');
+			document.querySelector(to).scrollIntoView({behavior:'smooth'});
+		}
+	</script>
+</body>
+</html>
