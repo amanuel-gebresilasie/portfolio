@@ -38,6 +38,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	width:100%;
+	padding-bottom: 5px;
 }
 /*
 ***********************************************************************
@@ -242,6 +243,10 @@ nav {
 	border: none;
 	transition: 0.1s;
 }
+
+.nav-content ul li button:hover{
+	opacity: 0.5;
+}
 .nav-content ul li button span {
 	margin-left: 12px;
 }
@@ -354,7 +359,7 @@ SECTION ABOUT
 
 .about .section-content img {
 	width: 98%;
-	height: 500px;
+	height: 400px;
 	margin: 20px 20px 20px 100%;
 	border: 2px solid #173c6b;
 	opacity: 0;
@@ -411,6 +416,7 @@ SKILLS
 
 .skills .section-content {
 	background: rgba(5, 5, 5, 1);
+	padding: 25px;
 }
 
 .section-skills-list {
@@ -587,6 +593,9 @@ MEDIA QUERIES
 		padding-bottom: 15px;
 		scroll-width: none;
 		overflow: -moz-scrollbars-none;
+	}
+	.nav-content-container {
+		width: 60%;
 	}
 	nav::-webkit-scrollbar {
 		display: none;

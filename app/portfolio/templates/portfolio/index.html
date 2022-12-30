@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#173c6b">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="{% static 'portfolio/style.css' %}">
@@ -115,6 +116,13 @@
 						</div>
 					</div>
 
+					<div class="progress">
+						<span class="skill">NODEJS</span>
+						<div class="progress-bar-wrapper">
+							<div data-width="15%" style="transition-duration:1.3s;" class="progress-bar"></div>
+						</div>
+					</div>
+
 				</div>
 			</div><!-- Section Content -->
 		</section><!-- Skills -->
@@ -153,6 +161,7 @@
 
 	<!-- Custom script -->
 	<script>
+		// initial nav link active state
 		let activeNavEl = document.querySelector('#nav-to-home');
 		activeNavEl.style.color = '#173c6b';
 		// ============= Typed Effect ============= //
@@ -195,18 +204,21 @@
 				const progresses = document.querySelectorAll(".progress");
 				progresses.forEach((progress)=>{progress.style.margin = '12px 0 12px 0';});
 			}
-		/*console.log(Math.round(window.pageYOffset));
-			console.log(document.querySelector('#about').offsetTop-Math.round(window.pageYOffset));*/
 			
+			// keep track off current page section and update nav link active state
+			const pageY = Math.round(window.pageYOffset)
+			const pageH = window.innerHeight
 			document.querySelectorAll('section').forEach((el)=>{
-			if (el.offsetTop-Math.round(window.pageYOffset) > 0 && el.offsetTop-Math.round(window.pageYOffset) < 300){
-				console.log("true");
+				const height = el.offsetHeight
+				const top = el.offsetTop
+
+				if (pageY >= ((top) - (((pageH/2) >> 0)+60) ) ){
+
 				if (activeNavEl){activeNavEl.style.color = '#A8A9B4'}
 				activeNavEl = document.querySelector("#nav-to-"+el.id.replace('#',''))
 				activeNavEl.style.color = '#173c6b';
 			}
-			if (window.pageYOffset < 200){
-				console.log("true----------");
+				if (window.pageYOffset < 100){
 				if (activeNavEl){activeNavEl.style.color = '#A8A9B4'}
 				activeNavEl = document.querySelector("#nav-to-home")
 				activeNavEl.style.color = '#173c6b';
@@ -222,10 +234,14 @@
 			window.open(caller.dataset.link);
 		}
 
-		// nav hum
+		// nav hum open/close
 		const navHum = document.querySelector('.nav-hum');
 		const nav = document.querySelector('nav');
 		navHum.addEventListener('click', ()=>{
+			const theme = document.querySelector('meta[name="theme-color"]')
+			if (theme.getAttribute('content') == "#173c6b"){
+				theme.setAttribute('content',  "rgba(4, 11, 20)");
+			}else {theme.setAttribute('content',  "#173c6b");}
 			nav.classList.toggle('nav-open');
 			document.body.classList.toggle('body-no-scroll');
 		});
@@ -233,15 +249,23 @@
 		// navigation thru nav links
 		function _scrollTo(caller) {
 			const to = caller.dataset.to;
+			const el = document.querySelector(to);
 			if (activeNavEl) {
 				activeNavEl.style.color = '#A8A9B4';
 			}
 			caller.style.color = '#173c6b';
 			activeNavEl = caller;
 
+			const theme = document.querySelector('meta[name="theme-color"]');
+
+			if (theme.getAttribute('content') == "#173c6b"){
+				theme.setAttribute('content',  "rgba(4, 11, 20)");
+			}else {theme.setAttribute('content',  "#173c6b");}
+
 			nav.classList.toggle('nav-open');
 			document.body.classList.toggle('body-no-scroll');
-			document.querySelector(to).scrollIntoView({behavior:'smooth'});
+			/*document.querySelector(to).scrollIntoView({behavior:'smooth'});*/
+			window.scrollTo({top: el.offsetTop-60, behavior: 'smooth'});
 		}
 	</script>
 </body>
