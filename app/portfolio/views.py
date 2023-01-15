@@ -8,5 +8,6 @@ def home(request):
             }
     return render(request,'portfolio/index.html',content)
 
-def a(r):
-    return HttpResponse("djanflgo http response")
+
+def error_404_view(request):
+    return HttpResponse("PAGE NOT FOUND !")

@@ -22,4 +22,6 @@ from . import views
 urlpatterns = [
     path('', views.home, name='portfolio-home'),
     path('a/', views.a)
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'views.error_404_view'
