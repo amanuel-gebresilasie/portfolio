@@ -9,5 +9,7 @@ def home(request):
     return render(request,'portfolio/index.html',content)
 
 
-def error_404_view(request,err):
-    return HttpResponse("PAGE NOT FOUND !")
+def e404(request,err):
+    return render(request,"404.html")
+def e500(re,er):
+    return render(request,"500.html")

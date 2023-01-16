@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('portfolio.urls'))
 ]
 
-handler404 = 'portfolio.views.error_404_view'
+handler404 = 'portfolio.views.e404'
+handler500 = 'portfolio.views.e500'
