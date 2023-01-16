@@ -1,0 +1,603 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300&display=swap');
+
+
+* {
+	padding: 0;
+	margin: 0;
+	transition: 1s;
+}
+
+a {
+	text-decoration: none;
+}
+
+html {
+	scroll-behaviour: smooth;
+}
+
+body {
+	background: #000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow-x: hidden;
+	width:100%;
+}
+.body-no-scroll {
+	overflow: hidden;
+}
+
+/* whole content container */
+.container {
+	background: #000;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width:100%;
+	padding-bottom: 5px;
+}
+/*
+***********************************************************************
+HEADER
+***********************************************************************
+*/
+
+.header {
+	background: #000;
+	background-image: url("/static/portfolio/bg.493ba4fa8dd4.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	object-fit: cover !important;
+}
+
+.header_content_holder {
+	background: transparent;
+	text-align: left;
+	max-height: 300px;
+	padding: 0 2px 50px 10px;
+	opacity: 0;
+	transition: 2s;
+}
+
+.name {
+	margin: 0 0 10px 0;
+	font-size: 28px;
+	font-weight: 700;
+	color: #6e6b6b;
+	font-family: "Raleway", serif;
+}
+
+.auto_text {
+	font-size: 26px;
+	width: 100%;
+	color: #6e6b6b;
+	font-family: "Poppins",monospace;
+}
+
+.auto {
+	border-bottom: 3px solid #000;
+}
+
+/*
+#######################################################################
+HEADER --- END
+#######################################################################
+*/
+
+
+/*
+*************************************************************************
+NAV
+*************************************************************************
+*/
+.nav-hum {
+	width: 45px;
+	height: 45px;
+	background: #173c6b;
+	border-radius: 50%;
+	position: fixed;
+	top: 7px;
+	right: 7px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: opacity 0.1s;
+	z-index: 9999;
+}
+.nav-hum:active {
+	opacity: 0.8;
+}
+
+nav {
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	position: fixed;
+	top: 0;
+	left: -100%;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	z-index: 1000;
+	transition: 0.5s;
+}
+
+.nav-open {
+	left: 0;
+}
+
+.nav-content-container {
+	width: 75%;
+	height: 100%;
+	background: rgba(4, 11, 20);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.nav-profile {
+	width: 100%;
+	min-height: 250px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5px;
+}
+
+.nav-profile-img-container {
+	width: 125px;
+	height: 125px;
+	border-radius: 50%;
+	margin-top: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(44, 47, 63);
+}
+.nav-profile-img-container img {
+	width: 90%;
+	height: 90%;
+	border-radius: 50%;
+}
+
+.nav-profile-name {
+	font-family: "Poppins", sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 1.2;
+	margin-top: 15px;
+	color: white;
+}
+
+.nav-profile-social-links {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3px 0 3px 0;
+	margin-top: 5px;
+}
+
+.nav-profile-social-links a {
+	height: 20px;
+	width: 20px;
+	margin: 5px;
+	display: inline-block;
+	text-decoration: none;
+	padding: 10px;
+	font-size: 18px;
+	background: rgba(33, 36, 49);
+	color: #fff;
+	border-radius: 50%;
+	text-align: center;
+}
+.nav-profile-social-links a i {
+	font-weight: 400;
+}
+.nav-profile-social-links a:hover {
+	background: rgba(12, 17, 29);
+}
+
+.nav-content {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 15px;
+}
+
+.nav-content ul {
+	list-style: none;
+	width: 100%;
+	display: flex;
+	flex-direction: column;	
+	padding: 5px;
+}
+
+.nav-content ul li {
+	margin: 20px 0px 20px 0;
+}
+.nav-content ul li button {
+	color: #A8A9B4;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	margin-left: 24px;
+	padding: 2px;
+	background: transparent;
+	border-radius: 10px;
+	border: none;
+	transition: 0.1s;
+}
+
+.nav-content ul li button:hover{
+	opacity: 0.5;
+}
+.nav-content ul li button span {
+	margin-left: 12px;
+}
+/*
+#######################################################################
+NAV --- END
+#######################################################################
+*/
+
+
+/*
+*************************************************************************
+SECTION COMMON
+*************************************************************************
+*/
+button {
+	text-decoration: none;
+	color: #149ddd;
+}
+
+.section {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.section-content {
+	background: #000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 15px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.section-title {
+	width: 100%;
+}
+
+.section-title h2 {
+	display: inline-block;
+	padding: 10px;
+	color: #173c6b;
+	font-size: 32px;
+	font-family: "Raleway", serif;
+	text-align: left;
+}
+
+.section-title h2::after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 4px;
+	background: #149ddd;
+}
+
+.section-subtitle {
+	width: 100%;
+}
+
+.section-subtitle h2 {
+	display: inline-block;
+	margin-top: 5px;
+	color: #149ddd;
+	font-size: 30px;
+	font-family: "Raleway", serif;
+}
+
+.section-content p {
+	font-family: "Open Sans", sans-serif;
+	font-size: 16px;
+	margin-top: 8px;
+	width: 100%;
+	spacing: 1px;
+	margin: 10px;
+	color: rgba(243, 242, 251, 0.80);
+}
+
+/*#######################################################################
+SECTON COMMON --- END
+#######################################################################
+*/
+
+
+/*
+**************************************************************************
+SECTION ABOUT
+**************************************************************************
+*/
+.about .section-content {
+	box-shadow: 0 -80px 50px -2px black;
+}
+
+#p3 {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 17px;
+}
+
+#special {
+	font-size: 16px;
+	width: 95%;
+	font-family: "Open Sans", sans-serif;
+	margin: 0;
+	padding: 8px 15px 8px 15px;
+	border-radius: 15px;
+	border: 2px solid #173c6b;
+}
+
+.about .section-content img {
+	width: 98%;
+	height: 400px;
+	margin: 20px 20px 20px 100%;
+	border: 2px solid #173c6b;
+	opacity: 0;
+	transition: opacity 1.2s,
+				margin 1.2s;
+	object-fit: cover;
+	object-position: bottom;
+
+}
+
+.section-about-list {
+	width: 100%;
+	margin: 2px 100% 2px 0;
+	opacity: 0;
+	transition: opacity 1.2s,
+				margin 1.2s;
+	overflow: auto;
+}
+
+.section-about-list ul {
+	font-family: "Open Sans", sans-serif;
+	font-size: 16px;
+	list-style: none;
+}
+
+.section-about-list ul li {
+	tetx-align: left;
+	margin: 20px 0 20px 0;
+	color: white;
+}
+
+.section-about-list ul li strong {
+	margin-right: 10px;
+}
+
+#i {
+	color: #149ddd;
+	margin-right: 10px;
+}
+
+
+/*
+#######################################################################
+ABOUT --- EMD
+#######################################################################
+*/
+
+
+/*
+**************************************************************************
+SKILLS
+**************************************************************************
+*/
+
+.skills .section-content {
+	background: rgba(5, 5, 5, 1);
+	padding: 25px;
+}
+
+.section-skills-list {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-item: center;
+	justify-content: center;
+	padding: 2px;
+	overflow: auto;
+	margin-right: 100%;
+	opacity: 0;
+	overflow: auto;
+	transition: opacity 1.3s,
+				margin 1.2s;
+}
+
+.progress {	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2px;
+	margin: 12px 0 12px 0;
+	transition: 2s;
+}
+
+.skill {
+	color: #fff;
+	font-family: "Open Sans", sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	width: 100%;
+	text-align: left;
+	padding: 2px;
+	margin: 2px 0 5px 0;
+}
+
+.progress-bar-wrapper {
+	width: 100%;
+	height: 10px;
+	background: rgba(25, 25, 25, 1);
+	border-radius: 15px;
+	overflow: auto;
+}
+
+.progress-bar {
+	width: 0;
+	height: 100%;
+	background: rgba(80, 100, 80, 1);
+	border-radius: 15px;
+	transition-delay: 0.3s;
+}
+
+/*
+#######################################################################
+SKILLS --- END
+#######################################################################
+*/
+
+/*
+**************************************************************************
+PROJECTS
+**************************************************************************
+*/
+#pp {
+	font-size: 20px;
+}
+
+.section-projects-list {
+	width: 100%;
+	margin-top: 15px;
+	padding: 2px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	jistify-content: center;
+	overflow: hidden;
+}
+
+.project {
+	margin: 8px auto;	
+	width: 98%;
+	height: 230px;
+	box-shadow: 0 0 30px rgba(20,20,20,1);	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+}
+
+.project-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 0.5s;
+}
+
+.project:hover img {
+	height: 80%;
+}
+
+.project-info-container {
+	width: 100%;
+	height: 15%;
+	display: flex;
+	flex-direction: row;
+	transition: 0.5;
+}
+
+.project-info {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	background: rgba(15, 15, 15, 1);
+	transition: 0.2s;
+}
+
+.project-info button {
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+	background: none;
+	border: none;
+	text-align: center;
+}
+
+.project-info:active {
+	background: rgba(30, 30, 30, 1)
+}
+
+/*
+#######################################################################
+PROJECTS --- END
+#######################################################################
+*/
+
+/*
+#######################################################################
+#######################################################################
+MEDIA QUERIES
+#######################################################################
+#######################################################################
+*/
+
+/* For Laptops and Tablets/Ipads */
+@media only screen and (min-width: 600px) {
+	.name {
+		font-size: 64px;
+	}
+
+	.project {
+		width: 380px;
+	}
+
+}
+
+/*  for devices that have very small screen width */
+@media only screen and (max-width: 390px) {
+	.project-img {
+		height: 80%;
+	}
+}
+
+/* landscape mode */
+@media only screen and (orientation: landscape) {
+	nav {
+		-ms-overflow-style: none;
+		overflow-y: auto;
+		padding-bottom: 15px;
+		scroll-width: none;
+		overflow: -moz-scrollbars-none;
+	}
+	.nav-content-container {
+		width: 60%;
+	}
+	nav::-webkit-scrollbar {
+		display: none;
+	}
+}
