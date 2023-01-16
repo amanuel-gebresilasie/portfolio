@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-i!y*x-kt$@)_q_&mr3isv9s2u^4i190h$ja#(a=aavx(ww3o8o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #ALLOWED_HOSTS = ['suiii.pagekite.me','localhost']
 ALLOWED_HOSTS = ['*']

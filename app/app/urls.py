@@ -20,6 +20,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('portfolio.urls'))
 ]
-
-handler404 = 'portfolio.views.e404'
-handler500 = 'portfolio.views.e500'
