@@ -12,4 +12,4 @@ def home(request):
 def e404(request,err):
     return render(request,"404.html")
 def e500(re,er):
-    return render(request,"500.html")
+    return render(re,"500.html")
